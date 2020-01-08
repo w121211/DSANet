@@ -60,7 +60,7 @@ if __name__ == '__main__':
     dataset = MTSFDataset(
         window=16,
         horizon=3,
-        data_name='wecar',
+        data_name='Pollution',
         set_type='train',
         data_dir='./data'
     )

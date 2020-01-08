@@ -8,7 +8,7 @@ import torch
 import traceback
 
 from test_tube import HyperOptArgumentParser, Experiment
-from pytorch_lightning.models.trainer import Trainer
+from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
 
 from model import DSANet
@@ -59,15 +59,15 @@ def main(hparams):
     # ------------------------
     # 4 INIT TRAINER
     # ------------------------
-    trainer = Trainer(
-        experiment=exp,
-        early_stop_callback=early_stop,
-    )
-
+    #m_trainer = Trainer(
+    #    experiment=exp,
+    #    early_stop_callback=early_stop,
+    #)
+    m_trainer = Trainer()
     # ------------------------
     # 5 START TRAINING
     # ------------------------
-    trainer.fit(model)
+    m_trainer.fit(model)
 
     print('View tensorboard logs by running\ntensorboard --logdir %s' % os.getcwd())
     print('and going to http://localhost:6006 on your browser')

@@ -405,7 +405,7 @@ class DSANet(LightningModule):
 
         # arguments from dataset
         parser.add_argument('--data_name', type=str)
-        parser.add_argument('--data_dir', default='./data', type=str)
+        parser.add_argument('--data_dir', default='.\data', type=str)
 
         parser.add_argument('--n_multiv', type=int)
         parser.opt_list('--window', default=64, type=int, options=[32, 64, 128], tunable=True)
