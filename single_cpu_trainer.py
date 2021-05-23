@@ -92,6 +92,7 @@ if __name__ == '__main__':
     # allow model to overwrite or extend args
     parser = DSANet.add_model_specific_args(parent_parser, root_dir)
     hyperparams = parser.parse_args()
+    print(hyperparams)
 
     # ---------------------
     # RUN TRAINING

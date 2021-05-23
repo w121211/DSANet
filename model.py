@@ -11,7 +11,8 @@ from torch.utils.data import DataLoader
 from torch.utils.data.distributed import DistributedSampler
 
 import pytorch_lightning as ptl
-from pytorch_lightning.root_module.root_module import LightningModule
+# from pytorch_lightning.root_module.root_module import LightningModule
+import pytorch_lightning as pl
 from dataset import MTSFDataset
 from dsanet.Layers import EncoderLayer, DecoderLayer
 
@@ -155,7 +156,7 @@ class AR(nn.Module):
         return x
 
 
-class DSANet(LightningModule):
+class DSANet(pl.LightningModule):
 
     def __init__(self, hparams):
         """
